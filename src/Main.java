@@ -15,7 +15,7 @@ public class Main {
             String userChoice = scanner.nextLine().toLowerCase(); // String method 'toLowerCase' to avoid case sensitivity issues
 
             if (userChoice.equals("exit")) {
-                System.out.println("See you next time.");
+                System.out.println("Bye.");
                 break;
             }
 
@@ -27,8 +27,36 @@ public class Main {
             String[] choices = {"rock", "paper", "scissors"}; // String array for switch statement
             Random random = new Random();
             String randomComputerChoice = choices[random.nextInt(3)]; // Random
-            System.out.println("I have chosen " + randomComputerChoice + ".");
+            System.out.println("I chose " + randomComputerChoice + ".");
 
+            // Switch statement to compare userChoice and randomComputerChoice
+
+            if (userChoice.equals(randomComputerChoice)) {
+                System.out.println("Its a draw. Go again.");
+            } else {
+                switch (userChoice) {
+                    case "rock":
+                        if (randomComputerChoice.equals("scissors")) {
+                            System.out.println("I suppose you win.");
+                        } else {
+                            System.out.println("LOSER! Again.");
+                        }
+                        break;
+                    case "paper":
+                        if (randomComputerChoice.equals("rock")) {
+                            System.out.println("I guess you win this time.");
+                        } else {
+                            System.out.println("You are a LOSER!!! Again.");
+                        }
+                        break;
+                        case "scissors":
+                            if (randomComputerChoice.equals("paper")) {
+                                System.out.println("You win. Lucky.");
+                            } else {
+                                System.out.println("LOSER!!");
+                            }
+                }
+            }
 
         }
 
