@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class RockPaperScissors extends Game
 {
+
+    int userScore = 0;
+    int computerScore = 0;
+
     @Override
     public void play() {
         System.out.println("You are about to enter a very serious game of rock paper scissors.");
@@ -12,6 +16,7 @@ public class RockPaperScissors extends Game
 
         // Create continuous loop for continuous play
         while (true) {
+            System.out.println("\nThe current scores are- You: " + userScore + ". Me: " + computerScore + ".\n");
             System.out.println("Enter either rock, paper or scissors (or exit to end game): ");
             String userChoice = scanner.nextLine().toLowerCase(); // String method 'toLowerCase' to avoid case sensitivity issues
 
@@ -39,27 +44,38 @@ public class RockPaperScissors extends Game
                     case "rock":
                         if (randomComputerChoice.equals("scissors")) {
                             System.out.println("I suppose you win.");
+                            userScore++;
                         } else {
                             System.out.println("LOSER! Again.");
+                            computerScore++;
                         }
                         break;
                     case "paper":
                         if (randomComputerChoice.equals("rock")) {
                             System.out.println("I guess you win this time.");
+                            userScore++;
                         } else {
                             System.out.println("You are a LOSER!!! Again.");
+                            computerScore++;
                         }
                         break;
                     case "scissors":
                         if (randomComputerChoice.equals("paper")) {
                             System.out.println("You win. Lucky.");
+                            userScore++;
                         } else {
                             System.out.println("LOSER!!");
+                            computerScore++;
                         }
                 }
             }
 
         }
 
+    }
+
+    @Override
+    public int getScore() {
+        return 0;
     }
 }
