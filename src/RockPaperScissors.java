@@ -1,8 +1,9 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class RockPaperScissors
+public class RockPaperScissors extends Game
 {
+    @Override
     public void play() {
         System.out.println("You are about to enter a very serious game of rock paper scissors.");
 
