@@ -8,7 +8,17 @@ public class Main {
         // Create scanner for user input detection
         Scanner scanner = new Scanner(System.in);
 
+        // Create continuous loop for continuous play
+        while (true) {
+            System.out.println("Enter either rock, paper or scissors (or exit to end game): ");
+            String userChoice = scanner.nextLine().toLowerCase(); // String method 'toLowerCase' to avoid case sensitivity issues
 
+            if (userChoice.equals("exit")) {
+                System.out.println("See you next time.");
+                break;
+            }
+
+        }
 
     }
 
