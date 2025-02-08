@@ -18,6 +18,10 @@ public class Main {
                 break;
             }
 
+            if (!userChoice.equals("rock") && !userChoice.equals("paper") && !userChoice.equals("scissors")){
+                System.out.println("You entered an invalid choice; try again with either 'rock' or 'paper' or 'scissors'.");
+            }
+
         }
 
     }
